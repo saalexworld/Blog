@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    Блок контента и текст который мы можем пердать при помощи функции super() которую мы вызвали в about2.htm
+        {% block table_contents %}
+        <ul>
+        {% for li in list_table -%}
+        <li>{% block item scoped %}{{li}}{% endblock %}</li>
+        {% endfor -%}
+        </ul>
+        {% endblock table_contents %}
+    {% endblock content %}
+</body>
+</html>
